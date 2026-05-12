@@ -4,7 +4,7 @@
 
 **Futuristic personal portfolio built with pure HTML, CSS & JS**
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-▲%20Vercel-black?style=for-the-badge&logo=vercel)](https://portfolio-shree-svg.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-▲%20Vercel-black?style=for-the-badge&logo=vercel)](https://portfolio-five-delta-xr8oas2k65.vercel.app)
 [![GitHub](https://img.shields.io/badge/GitHub-Shree--svg-181717?style=for-the-badge&logo=github)](https://github.com/Shree-svg)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-shreedharsharma19-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/shreedharsharma19)
 

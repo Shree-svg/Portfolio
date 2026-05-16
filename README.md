@@ -30,7 +30,7 @@
 |---|---|
 | **Hero** | Name, role, CTAs, social links |
 | **Skills** | Grouped by Mobile, Web, Backend, Hardware, IoT |
-| **Projects** | Mind-Meld · CouponX · ReThread |
+| **Projects** | Mind-Meld · CouponX · ReThread · ServiceBook |
 | **Experience** | Android Club VITC |
 | **Education** | VIT Chennai · W.H. Smith Memorial School |
 | **Contact** | Email · Phone · LinkedIn · GitHub |
@@ -63,6 +63,15 @@ Co-developed full-stack coupon aggregation platform with smart discovery, auto-a
 High-fidelity editorial e-commerce app for archival fashion with a full shopping workflow (Shop, Cart, Wishlist, Sell) and a premium CSS design system.
 
 [→ View Repo](https://github.com/Shree-svg/ReThread)
+
+---
+
+### 🛠️ ServiceBook — Full-Stack Service Booking Platform
+> React 18 · Vite · Node.js · Express · MongoDB · Tailwind CSS
+
+Comprehensive service booking platform with customer 4-step booking flow, real-time tracking, provider job management dashboard, admin dispute resolution, and secure JWT-based authentication with rate limiting and security headers.
+
+[→ View Repo](https://github.com/Shree-svg/servicebook)
 
 ---
 

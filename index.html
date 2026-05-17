@@ -164,6 +164,12 @@ section{position:relative;z-index:1;padding:100px 40px}
 .project-link:hover{color:var(--text);gap:10px}
 .project-link svg{width:12px;height:12px}
 
+/* ALL PROJECTS SECTION */
+#all-projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+@media(max-width:768px){#all-projects-grid{grid-template-columns:1fr}}
+.project-card.dynamic{opacity:0;animation:fadeInUp 0.6s ease forwards}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
 /* EXPERIENCE */
 .exp-timeline{display:flex;flex-direction:column;gap:0}
 .exp-item{display:flex;gap:32px;padding-bottom:40px;position:relative}
@@ -490,6 +496,12 @@ footer{padding:40px;text-align:center;border-top:0.5px solid var(--border);color
         </a>
       </div>
     </div>
+    
+    <!-- All Projects Loaded Dynamically -->
+    <div id="all-projects-container" class="reveal" style="display:none;">
+      <p style="font-size:13px;color:var(--text3);margin-bottom:24px;margin-top:40px;padding-top:40px;border-top:0.5px solid var(--border);font-family:'JetBrains Mono',monospace">// All GitHub repositories</p>
+      <div id="all-projects-grid"></div>
+    </div>
   </div>
 </section>
 
@@ -752,5 +764,98 @@ dots.forEach(function(d, i){
   });
 });
 </script>
+
+<!-- GitHub Repositories Loader -->
+<script>
+(function(){
+  var GITHUB_USER = 'Shree-svg';
+  var FEATURED_REPOS = ['Mind-Meld', 'ReThread', 'servicebook', 'Neural_Nexus-Virtual_3D_Museum'];
+  
+  function createProjectCard(repo, index) {
+    var card = document.createElement('div');
+    card.className = 'project-card dynamic reveal';
+    card.style.setProperty('--i', index);
+    
+    var languages = repo.language || 'Unknown';
+    var description = repo.description || 'Repository without description';
+    
+    if (description.length > 120) {
+      description = description.substring(0, 120) + '...';
+    }
+    
+    var date = new Date(repo.updated_at);
+    var formattedDate = date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    
+    card.innerHTML = `
+      <div class="project-num" style="font-size:12px;color:var(--text3)">📦 Repository</div>
+      <div class="project-title">${escapeHtml(repo.name)}</div>
+      <div class="project-desc">${escapeHtml(description)}</div>
+      <div class="project-stack">
+        <span class="stack-tag">${escapeHtml(languages)}</span>
+        <span class="stack-tag" style="color:var(--text3);font-size:10px">Updated: ${formattedDate}</span>
+        ${repo.stargazers_count > 0 ? '<span class="stack-tag" style="color:var(--accent4)">⭐ ' + repo.stargazers_count + '</span>' : ''}
+      </div>
+      <a href="${escapeHtml(repo.html_url)}" target="_blank" class="project-link">
+        View on GitHub
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+      </a>
+    `;
+    
+    return card;
+  }
+  
+  function escapeHtml(text) {
+    if (!text) return '';
+    var div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+  
+  function loadRepositories() {
+    fetch('https://api.github.com/users/' + GITHUB_USER + '/repos?per_page=100&sort=updated&type=owner')
+      .then(function(res) { return res.json(); })
+      .then(function(repos) {
+        if (!Array.isArray(repos)) {
+          console.error('Failed to fetch repositories');
+          return;
+        }
+        
+        var otherRepos = repos.filter(function(r) {
+          return r.name !== 'Portfolio' && FEATURED_REPOS.indexOf(r.name) === -1;
+        });
+        
+        if (otherRepos.length > 0) {
+          var container = document.getElementById('all-projects-container');
+          var grid = document.getElementById('all-projects-grid');
+          
+          otherRepos.forEach(function(repo, index) {
+            var card = createProjectCard(repo, index);
+            grid.appendChild(card);
+          });
+          
+          if (grid.children.length > 0) {
+            container.style.display = 'block';
+            
+            setTimeout(function() {
+              document.querySelectorAll('.project-card.dynamic').forEach(function(c, i) {
+                c.style.setProperty('--i', i);
+              });
+            }, 100);
+          }
+        }
+      })
+      .catch(function(err) {
+        console.log('Note: GitHub repositories could not be loaded. This might be due to API rate limits or network restrictions.');
+      });
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadRepositories);
+  } else {
+    loadRepositories();
+  }
+})();
+</script>
+
 </body>
 </html>

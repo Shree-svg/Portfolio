@@ -824,6 +824,14 @@ dots.forEach(function(d, i){
           return r.name !== 'Portfolio' && FEATURED_REPOS.indexOf(r.name) === -1;
         });
         
+        // Sort repositories by value (stars) first, then by size (KB)
+        otherRepos.sort(function(a, b) {
+          if (b.stargazers_count !== a.stargazers_count) {
+            return b.stargazers_count - a.stargazers_count;
+          }
+          return b.size - a.size;
+        });
+        
         if (otherRepos.length > 0) {
           var container = document.getElementById('all-projects-container');
           var grid = document.getElementById('all-projects-grid');

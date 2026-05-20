@@ -495,6 +495,50 @@ footer{padding:40px;text-align:center;border-top:0.5px solid var(--border);color
           <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
         </a>
       </div>
+      <div class="project-card reveal">
+        <div class="project-num">06 — AI CRM / MERN</div>
+        <div class="project-title">GigFlow</div>
+        <div class="project-desc">A premium lead management and outreach platform with RBAC, JWT authentication, analytics dashboards, and AI-assisted campaign feedback.</div>
+        <div class="project-stack">
+          <span class="stack-tag">TypeScript</span>
+          <span class="stack-tag">React</span>
+          <span class="stack-tag">Express</span>
+          <span class="stack-tag">MongoDB</span>
+          <span class="stack-tag">JWT</span>
+        </div>
+        <ul class="project-bullets">
+          <li>Role-based CRM workflow for admins and sales users across the full lead lifecycle</li>
+          <li>Stateless JWT auth, protected APIs, and production-ready Express + TypeScript backend</li>
+          <li>Acquisition funnel analytics with native SVG sparklines and performance insights</li>
+          <li>AI-powered campaign critique flow wrapped in a polished cyberpunk UI</li>
+        </ul>
+        <a href="https://github.com/Shree-svg/GigFlow" target="_blank" class="project-link">
+          View on GitHub
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        </a>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-num">07 — SaaS / Lead Routing</div>
+        <div class="project-title">Prowider</div>
+        <div class="project-desc">A professional lead distribution system with fair allocation, quota-aware routing, real-time dashboards, and concurrency-safe backend workflows.</div>
+        <div class="project-stack">
+          <span class="stack-tag">Next.js 16</span>
+          <span class="stack-tag">TypeScript</span>
+          <span class="stack-tag">PostgreSQL</span>
+          <span class="stack-tag">Prisma</span>
+          <span class="stack-tag">Tailwind CSS</span>
+        </div>
+        <ul class="project-bullets">
+          <li>Intelligent round-robin distribution that assigns leads fairly while respecting monthly quotas</li>
+          <li>Serializable database transactions and row locking to prevent race conditions</li>
+          <li>Server-Sent Events dashboard for real-time provider metrics and lead activity</li>
+          <li>Webhook-based quota resets with idempotency guarantees for production reliability</li>
+        </ul>
+        <a href="https://github.com/Shree-svg/Prowider" target="_blank" class="project-link">
+          View on GitHub
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        </a>
+      </div>
     </div>
     
     <!-- All Projects Loaded Dynamically -->
@@ -769,7 +813,7 @@ dots.forEach(function(d, i){
 <script>
 (function(){
   var GITHUB_USER = 'Shree-svg';
-  var FEATURED_REPOS = ['Mind-Meld', 'ReThread', 'servicebook', 'Neural_Nexus-Virtual_3D_Museum'];
+  var FEATURED_REPOS = ['Mind-Meld', 'ReThread', 'servicebook', 'Neural_Nexus-Virtual_3D_Museum', 'GigFlow', 'Prowider'];
   
   function createProjectCard(repo, index) {
     var card = document.createElement('div');

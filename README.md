@@ -30,7 +30,7 @@
 |---|---|
 | **Hero** | Name, role, CTAs, social links |
 | **Skills** | Grouped by Mobile, Web, Backend, Hardware, IoT |
-| **Projects** | Mind-Meld · CouponX · ReThread · ServiceBook |
+| **Projects** | Mind-Meld · CouponX · ReThread · ServiceBook · Neural Nexus · GigFlow · Prowider |
 | **Experience** | Android Club VITC |
 | **Education** | VIT Chennai · W.H. Smith Memorial School |
 | **Contact** | Email · Phone · LinkedIn · GitHub |
@@ -72,6 +72,33 @@ High-fidelity editorial e-commerce app for archival fashion with a full shopping
 Comprehensive service booking platform with customer 4-step booking flow, real-time tracking, provider job management dashboard, admin dispute resolution, and secure JWT-based authentication with rate limiting and security headers.
 
 [→ View Repo](https://github.com/Shree-svg/servicebook)
+
+---
+
+### 🌌 Neural Nexus — WebXR Virtual 3D Museum
+> A-Frame · Three.js · WebXR · HTML · JavaScript
+
+Immersive virtual museum with themed exhibit halls, atmospheric fog, first-person exploration, and browser-based VR support deployed on GitHub Pages.
+
+[→ View Repo](https://github.com/Shree-svg/Neural_Nexus-Virtual_3D_Museum)
+
+---
+
+### 📈 GigFlow — AI CRM & Outreach Terminal
+> TypeScript · React · Express · MongoDB · JWT
+
+Premium MERN CRM and outreach platform with role-based access control, analytics dashboards, acquisition funnel insights, and AI-powered campaign critique workflows.
+
+[→ View Repo](https://github.com/Shree-svg/GigFlow)
+
+---
+
+### 🎯 Prowider — Intelligent Lead Distribution Platform
+> Next.js 16 · TypeScript · PostgreSQL · Prisma · Tailwind CSS
+
+Professional lead routing system with fair round-robin allocation, quota-aware assignments, real-time dashboard updates, and concurrency-safe database transactions.
+
+[→ View Repo](https://github.com/Shree-svg/Prowider)
 
 ---
 

@@ -773,7 +773,14 @@ dots.forEach(function(d, i){
     card.style.setProperty('--i', index);
     
     var languages = repo.language || 'Unknown';
-    var description = repo.description || 'Repository without description';
+    var description = repo.description;
+    if (!description || description.trim() === '') {
+      if (repo.name === 'Prowider') {
+        description = 'Professional Lead Distribution System with round-robin allocation, built with Next.js, Prisma, and PostgreSQL.';
+      } else {
+        description = 'An open-source project developed by Shreedhar Sharma.';
+      }
+    }
     
     if (description.length > 120) {
       description = description.substring(0, 120) + '...';
